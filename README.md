@@ -19,4 +19,9 @@
   npx webpack --config webpack.config.js;将根据本地的webpack配置文件进行打包
 10.webpack管理资源（loader的使用）
   webpack的配置文件的位置暂时不知道在哪里修改，然后就是寻找文件的位置在include中配置的，cssloader Ok
-11.
+11.webpack配置多个入口文件，并且在output中通过变量输出对应的文件名到index.html中
+12.开发环境的搭建
+  首先在生产环境中加入source map有利于查找问题位置引入 devtool: 'inline-source-map'（还有不同等级的map）
+  使用观察者模式，检查当文件发生改变自动编译输出（使用webpack --watch）唯一问题是浏览器无法热更新
+  webpack-dev-server用来处理热更新npm 执行webpack-dev-server --open 然后在webpack配置文件中写入devServer要监听的文件（发现更新效率较低，等待时间较长）
+
