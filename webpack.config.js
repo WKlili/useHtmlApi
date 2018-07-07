@@ -1,9 +1,12 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+    app: './src/main.js',
+    print: './src/static/js/print.js'
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -13,6 +16,9 @@ module.exports = {
       use: [
         'style-loader',
         'css-loader'
+      ],
+      include: [
+        path.resolve(__dirname, 'src/static/css')
       ]
     }]
   }

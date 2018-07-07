@@ -18,3 +18,5 @@
 9.注意本地全局webpack和项目中的webpack版本是否一致。
   npx webpack --config webpack.config.js;将根据本地的webpack配置文件进行打包
 10.webpack管理资源（loader的使用）
+  webpack的配置文件的位置暂时不知道在哪里修改，然后就是寻找文件的位置在include中配置的，cssloader Ok
+11.
