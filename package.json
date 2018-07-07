@@ -2,7 +2,7 @@
   "name": "usehtmlapi",
   "version": "1.0.0",
   "description": "to learn webpack&es6&typescript&git",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,5 +11,8 @@
   "devDependencies": {
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "vue": "^2.5.16"
   }
 }
