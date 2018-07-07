@@ -4,6 +4,7 @@
   "description": "to learn webpack&es6&typescript&git",
   "private": true,
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,6 +14,7 @@
     "webpack-cli": "^3.0.8"
   },
   "dependencies": {
+    "lodash": "^4.17.10",
     "vue": "^2.5.16"
   }
 }
