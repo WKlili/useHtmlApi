@@ -9,13 +9,13 @@
 export default {
     data() {
         return {
-            msg: "hello"
+            msg: "hello map"
         };
     }
 };
 </script>
 <style>
 h1 {
-    color: red;
+    color: blue;
 }
 </style>

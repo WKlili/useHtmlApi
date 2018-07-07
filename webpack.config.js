@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
+  mode: 'development',
   entry: {
     app: './src/main.js'
   },
@@ -12,21 +13,22 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  devtool: 'inline-source-map',
+  devtool: 'cheap-module-eval-source-map',
   module: {
-    rules: [
+    rules: [{
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ],
+        include: path.resolve(__dirname, 'src')
+      },
       {
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        'css-loader'
-      ]
-    },
-    {
-      test: /\.vue$/,
-      use: 'vue-loader',
-    }
-  ]
+        test: /\.vue$/,
+        use: 'vue-loader',
+        include: path.resolve(__dirname, 'src')
+      }
+    ]
   },
   watch: true,
   watchOptions: {
@@ -37,6 +39,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'test输出到页面的内容',
       template: 'index.html',
+      contentBase: false, // since we use CopyWebpackPlugin.
+      compress: true,
+      clientLogLevel: 'warning',
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
