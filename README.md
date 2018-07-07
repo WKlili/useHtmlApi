@@ -24,4 +24,6 @@
   首先在生产环境中加入source map有利于查找问题位置引入 devtool: 'inline-source-map'（还有不同等级的map）
   使用观察者模式，检查当文件发生改变自动编译输出（使用webpack --watch）唯一问题是浏览器无法热更新
   webpack-dev-server用来处理热更新npm 执行webpack-dev-server --open 然后在webpack配置文件中写入devServer要监听的文件（发现更新效率较低，等待时间较长）
-
+13.与服务器合作
+14.热更新,问题是和vue-cli比更新的速度还是非常慢，需要五秒左右，需要解决这个问题
+15.与vue结合，输出模版。需要在插件中配置HtmlWebpackPlugin设置模版文件
