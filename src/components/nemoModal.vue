@@ -1,10 +1,14 @@
 <template>
-    <div v-show="nemoWrapFlag"  v-on:click="$emit('countAddFuc')">
+    <div v-show="nemoWrapFlag" v-on:click="$emit('countAddFuc',count)">
         <div class='nemo-wrap'>
 
         </div>
         <h1 class='nemo-content'>
             {{msg}}-{{count}}
+            <br><br>
+            <input  class="nemoInput" v-bind:value="nemoInput" v-on:input="$emit('input', $event.target.value)">
+            <br><br>
+            <slot></slot>
         </h1>
     </div>
 </template>
@@ -15,6 +19,10 @@ export default {
         count: {
             type: Number,
             default: 0
+        },
+        nemoInput:{
+            type: String,
+            default: '11'
         }
     },
     data:()=> {
@@ -55,5 +63,11 @@ export default {
     text-align: center;
     font-size: 28px;
     transform: translate(-50%,-50%);
+}
+.nemoInput{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
 }
 </style>

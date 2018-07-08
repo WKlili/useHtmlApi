@@ -1,6 +1,13 @@
 <template>
     <div>
-        <nemoModalvue v-on:countAddFuc="countAdd" :count="propCount"></nemoModalvue>
+        <nemo-modalvue
+        v-bind:nemoInput="innerInput"
+        v-on:input="innerInput = $event"
+
+        v-on:countAddFuc="countAdd" 
+        :count="propCount">
+        插槽测试
+        </nemo-modalvue>
     </div>
 </template>
 <script>
@@ -14,11 +21,13 @@ export default {
    data() {
     return {
             propCount: 1,
+            innerInput: ''
         }
     },
     methods:{
-        countAdd: function(){
-            console.log(1);
+        countAdd: function($event){
+            console.log($event);
+            console.log(this.innerInput)
             this.propCount++
         }
     }
