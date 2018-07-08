@@ -13,7 +13,7 @@ export default {
     data() {
         return {
             msg: "hello map",
-            nemoWrapFlag: false,
+            nemoWrapFlag: true,
         };
     },
     methods: {
