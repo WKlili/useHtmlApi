@@ -36,3 +36,4 @@
 <p>暂时不清楚是否有其他方法！！！！</p>
 <h2>17.vue的组件实现，es6的语法使用，以及重新加一个git分支，最后合成代码。</h2>
 <p>https://www.cnblogs.com/wonyun/p/6030090.html(html-webpack-plugin详解)</p>
+<p>vue组件之间的值传递</p>

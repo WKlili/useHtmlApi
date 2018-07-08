@@ -7,18 +7,18 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    // app: './src/main.js'
-    app: './src/components/index.js' //打包组件js入口文件
+    app: './src/main.js'
+    // app: './src/components/index.js' //打包组件js入口文件
   },
   output: {
-    // filename: '[name].bundle.js',
-    // path: path.resolve(__dirname, 'dist')
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
-    filename: 'nemoModal.js',
-    library: 'nemoModal',
-    libraryTarget: 'umd',
-    umdNamedDefine: true,
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
+    // path: path.resolve(__dirname, 'dist'),
+    // publicPath: '/dist/',
+    // filename: 'nemoModal.js',
+    // library: 'nemoModal',
+    // libraryTarget: 'umd',
+    // umdNamedDefine: true,
   },
   devtool: 'cheap-module-eval-source-map',
   module: {
@@ -37,23 +37,25 @@ module.exports = {
       }
     ]
   },
-  // watch: true,
-  // watchOptions: {
-  //   ignored: /node_modules/,
-  // },
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/,
+  },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    // new HtmlWebpackPlugin({
-    //   title: 'test输出到页面的内容',
-    //   template: 'index.html',
-    //   clientLogLevel: 'warning',
-    // }),
+    new HtmlWebpackPlugin({
+      title: 'test输出到页面的内容',
+      template: 'index.html',
+      clientLogLevel: 'warning',
+    }),
+
+
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new VueLoaderPlugin()
   ],
-  // devServer: {
-  //   contentBase: './dist',
-  //   hot: true
-  // },
+  devServer: {
+    contentBase: './dist',
+    hot: true
+  },
 };

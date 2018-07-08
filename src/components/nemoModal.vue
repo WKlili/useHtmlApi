@@ -1,25 +1,35 @@
 <template>
-    <div v-show="nemoWrapFlag" @touchstart="nemoHiddenWrap">
+    <div v-show="nemoWrapFlag"  v-on:click="$emit('countAddFuc')">
         <div class='nemo-wrap'>
 
         </div>
         <h1 class='nemo-content'>
-            {{msg}}
+            {{msg}}-{{count}}
         </h1>
     </div>
 </template>
 <script>
 export default {
     name: 'nemoModalvue',
-    data() {
+    props: {
+        count: {
+            type: Number,
+            default: 0
+        }
+    },
+    data:()=> {
         return {
             msg: "hello map",
             nemoWrapFlag: true,
         };
     },
+    computed: {
+
+    },
     methods: {
         nemoHiddenWrap(){
-            this.nemoWrapFlag = false;
+            // this.nemoWrapFlag = false;
+            // this.count++;
         }
     }
 };
