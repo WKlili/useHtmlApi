@@ -2,15 +2,20 @@
   "name": "usehtmlapi",
   "version": "1.0.0",
   "description": "to learn webpack&es6&typescript&git",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "main": "dist/nemoModal.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/formFittingPants/useHtmlApi.git"
+  },
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --progress --hide-modules",
     "watch": "webpack --watch",
     "start": "webpack-dev-server",
     "server": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "wklili",
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
