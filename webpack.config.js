@@ -39,8 +39,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'test输出到页面的内容',
       template: 'index.html',
-      contentBase: false, // since we use CopyWebpackPlugin.
-      compress: true,
       clientLogLevel: 'warning',
     }),
     new webpack.NamedModulesPlugin(),

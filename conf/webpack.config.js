@@ -1,19 +1,54 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
-  entry: './src/main.js',
+  mode: 'development',
+  entry: {
+    app: './src/main.js'
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  devtool: 'cheap-module-eval-source-map',
   module: {
     rules: [{
-      // ./static/css/style.css
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        'css-loader'
-      ]
-    }]
-  }
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ],
+        include: path.resolve(__dirname, 'src')
+      },
+      {
+        test: /\.vue$/,
+        use: 'vue-loader',
+        include: path.resolve(__dirname, 'src')
+      }
+    ]
+  },
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/,
+  },
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      title: 'test输出到页面的内容',
+      template: 'index.html',
+      contentBase: false, // since we use CopyWebpackPlugin.
+      compress: true,
+      clientLogLevel: 'warning',
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new VueLoaderPlugin()
+  ],
+  devServer: {
+    contentBase: './dist',
+    hot: true
+  },
 };
