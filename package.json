@@ -1,6 +1,6 @@
 {
   "name": "usehtmlapi",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "to learn webpack&es6&typescript&git",
   "private": false,
   "license": "MIT",
@@ -12,7 +12,7 @@
   "scripts": {
     "build": "webpack --progress --hide-modules",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --config conf/webpack.base.conf.js",
     "server": "node server.js"
   },
   "author": "wklili",
