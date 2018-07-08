@@ -10,6 +10,7 @@
 </template>
 <script>
 export default {
+    name: 'nemoModalvue',
     data() {
         return {
             msg: "hello map",

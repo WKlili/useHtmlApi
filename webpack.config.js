@@ -43,11 +43,11 @@ module.exports = {
   // },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      title: 'test输出到页面的内容',
-      template: 'index.html',
-      clientLogLevel: 'warning',
-    }),
+    // new HtmlWebpackPlugin({
+    //   title: 'test输出到页面的内容',
+    //   template: 'index.html',
+    //   clientLogLevel: 'warning',
+    // }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new VueLoaderPlugin()
