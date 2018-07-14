@@ -38,3 +38,4 @@
 <p>https://www.cnblogs.com/wonyun/p/6030090.html(html-webpack-plugin详解)</p>
 <p>vue组件之间的值传递</p>
 <p>vue组件之间的事件触发还有input的model的值传递，总的来说都是通过eventloop分发事件</p>
+<h2>移植到win</h2>
